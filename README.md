@@ -1,2 +1,2 @@
 # wdd231
-BYU
+BYU IDAHO
