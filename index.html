@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enoch Balbuena - Course Home</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <img src="images/enoch-balbuena.webp" alt="Enoch Balbuena" class="profile-pic">
+            <h1>Enoch Balbuena</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#chamber">Chamber</a></li>
+                <li><a href="https://github.com/enochbalbuena" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://linkedin.com/in/enoch-" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>     
+
+    <main>
+        <section class="coursework">
+            <h2>Course Work</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+    
+        <section class="location">
+            <h2>Puebla, Mexico</h2>
+            <img src="images/puebla-downtown.webp" alt="Puebla's downtown" class="location-image">
+            <p>Puebla's downtown</p>
+        </section>
+    
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filters">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div id="course-list" class="course-list">
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Balbuena, Enoch. Mexico</p>
+        <p id="lastModified"></p>
+    </footer>    
+    
+
+</body>
+</html>
