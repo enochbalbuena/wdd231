@@ -17,7 +17,13 @@
 
     <header>
         <div class="profile-container">
-            <img src="images/enoch-balbuena.webp" alt="Enoch Balbuena" class="profile-pic" loading="lazy">
+            <img 
+    src="images/enoch-balbuena-large.webp" 
+    srcset="images/enoch-balbuena-small.webp 300w,
+            images/enoch-balbuena-medium.webp 600w,
+            images/enoch-balbuena-large.webp 900w"
+    sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
+    alt="Enoch Balbuena" class="profile-pic" width="200" height="200" loading="lazy">
             <h1>Enoch Balbuena</h1>
         </div>
         <button class="menu-toggle" aria-label="Toggle Menu">
@@ -45,7 +51,13 @@
     
         <section class="location">
             <h2>Puebla, Mexico</h2>
-            <img src="images/puebla-downtown.webp" alt="Puebla's downtown" class="location-image" loading="lazy">
+            <img 
+    src="images/puebla-downtown-large.webp" 
+    srcset="images/puebla-downtown-small.webp 600w,
+            images/puebla-downtown-medium.webp 1200w,
+            images/puebla-downtown-large.webp 1800w"
+    sizes="(max-width: 600px) 600px, (max-width: 1200px) 1200px, 1800px"
+    alt="Puebla's downtown" class="location-image" width="600" height="400" loading="lazy">
             <p>Puebla's downtown</p>
         </section>
     
