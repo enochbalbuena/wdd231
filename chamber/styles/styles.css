@@ -47,7 +47,7 @@ footer p {
 
 .main-nav ul li a {
     text-decoration: none;
-    color: (var(--secondary-color));
+    color: var(--secondary-color);
     font-weight: bold;
     padding: 5px 10px;
 }
@@ -80,7 +80,7 @@ footer p {
 
 .site-name {
     font-size: 1.5rem;
-    color: (--text-color);
+    color: var(--text-color);
     font-weight: bold;
     margin: 0;
 }
