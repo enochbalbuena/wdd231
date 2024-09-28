@@ -104,7 +104,7 @@ footer p {
 }
 
 .business-card a {
-    color: var(--link-color);
+    color: #007BFF;
     text-decoration: none;
 }
 
