@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Atípico Café",
+      "address": "Alpha Plaza, P.º Opera 17002-int 118, Lomas de Angelópolis, 72830 San Bernardino Tlaxcalancingo, Pue.",
+      "phone": "222-555-1234",
+      "website": "http://atipico.cafe/",
+      "image": "atipico.webp",
+      "membershipLevel": 3,
+      "description": "Specialty coffee, tea & baked goods."
+    },
+    {
+      "name": "La Canasta",
+      "address": "Int. Plaza Sonata Market, A San Martinito 1, Lomas de Angelópolis, 72495 San Andrés Cholula, Pue.",
+      "phone": "+522224318949",
+      "website": "https://www.lacanasta.com",
+      "image": "la-canasta.webp",
+      "membershipLevel": 2,
+      "description": "Mercado de productos agrícolas"
+    },
+    {
+      "name": "Don Pastor Sonata",
+      "address": "Planta Baja, P.º Escala 4, II, 72830 Heroica Puebla de Zaragoza, Pue.",
+      "phone": "+522225557355",
+      "website": "http://www.donpastor.mx/menu/",
+      "image": "don-pastor.webp",
+      "membershipLevel": 1,
+      "description": "Platos mexicanos y especialidades de tacos al pastor se ofrecen en lugar animado lleno de letreros y colores."
+    },
+    {
+      "name": "Technik Solutions",
+      "address": "Paseo Sinfonía No. 4, Local 2-1 Oficina A, Lomas de Angelópolis, II, 72830",
+      "phone": "+522221591644",
+      "website": "http://technik.com.mx/",
+      "image": "technik.webp",
+      "membershipLevel": 3,
+      "description": "Empresa constructora."
+    },
+    {
+      "name": "Kahlo Floristeria",
+      "address": "Boulevard Europa No.17 Piso 1 Local 1 Pza STW, Lomas de Angelópolis, 72411 Heroica Puebla de Zaragoza, Pue.",
+      "phone": "+522223585636",
+      "website": "https://www.facebook.com/KahloFloristeria/?locale=es_LA",
+      "image": "kahlo.webp",
+      "membershipLevel": 2,
+      "description": "Diseños florales y artesanales, decoración para eventos, artículos de decoración, regalos, barra de dulces."
+    },
+    {
+      "name": "ECON Tech",
+      "address": "Corporativo Angelópolis, P.º Opera 2-oficina 206, Lomas de Angelópolis, 72830 Heroica Puebla de Zaragoza, Pue.",
+      "phone": "+522224788282",
+      "website": "https://econ-tech.com/",
+      "image": "econ.webp",
+      "membershipLevel": 1,
+      "description": "Solutions based on data analytics and AI (Artifitial Inteligence) to generate knowledge, deliver insights, improve quality and make better decisions."
+    },
+    {
+      "name": "Smart Fit- Lomas de Angelópolis",
+      "address": "Blvrd Interamericano 108-Int 11, Lomas de Angelópolis, 72830 San Andrés Cholula, Pue.",
+      "phone": "222-555-1718",
+      "website": "https://www.smartfit.com.mx/gimnasios/lomas-de-angelopolis",
+      "image": "smartfit.webp",
+      "membershipLevel": 3,
+      "description": "Conoce Smart Fit Lomas de Angelópolis. Con equipos modernos, planes accesibles y profesores cualificados esperándote. ¡Ven a entrenar con nosotros!"
+    }
+  ]
+  
