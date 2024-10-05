@@ -115,30 +115,16 @@ function displayWeather(data) {
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
     const weatherIcon = document.getElementById('weather-icon');
-    if (weatherIcon) {
+    if (iconCode) {
         weatherIcon.src = iconUrl;
         weatherIcon.alt = currentWeather.weather[0].description;
+        weatherIcon.style.display = 'block';
     }
 
     const currentDayElement = document.getElementById('current-day');
     if (currentDayElement) {
         const today = new Date();
         currentDayElement.textContent = `${today.toLocaleDateString('en-US', { weekday: 'long' })}, ${today.toDateString()}`;
-    }
-
-    const forecastContainer = document.querySelector('.forecast-info ul');
-    if (forecastContainer) {
-        forecastContainer.innerHTML = '';
-        for (let i = 1; i <= 3; i++) {
-            const day = new Date();
-            day.setDate(day.getDate() + i);
-            const dayName = day.toLocaleDateString('en-US', { weekday: 'long' });
-
-            const forecastItem = `
-                <li>${dayName}: ${Math.round(currentWeather.main.temp)}°C, ${capitalizeWords(currentWeather.weather[0].description)}</li>
-            `;
-            forecastContainer.innerHTML += forecastItem;
-        }
     }
 }
 
