@@ -82,7 +82,7 @@ async function loadWeather() {
     const apiKey = 'be443110b9a6117b5c824c0a74e70561';
     const lat = 18.97;
     const lon = -98.29;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     try {
         const response = await fetch(apiUrl);
@@ -98,15 +98,15 @@ async function loadWeather() {
 }
 
 function displayWeather(data) {
-    const currentWeather = data;
+    const currentWeather = data.list[0];
     document.getElementById('temp').textContent = Math.round(currentWeather.main.temp);
     document.getElementById('description').textContent = capitalizeWords(currentWeather.weather[0].description);
     document.getElementById('high').textContent = Math.round(currentWeather.main.temp_max);
     document.getElementById('low').textContent = Math.round(currentWeather.main.temp_min);
     document.getElementById('humidity').textContent = currentWeather.main.humidity;
 
-    const sunriseTime = new Date(currentWeather.sys.sunrise * 1000);
-    const sunsetTime = new Date(currentWeather.sys.sunset * 1000);
+    const sunriseTime = new Date(data.city.sunrise * 1000);
+    const sunsetTime = new Date(data.city.sunset * 1000);
 
     document.getElementById('sunrise').textContent = sunriseTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     document.getElementById('sunset').textContent = sunsetTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -126,8 +126,23 @@ function displayWeather(data) {
         const today = new Date();
         currentDayElement.textContent = `${today.toLocaleDateString('en-US', { weekday: 'long' })}, ${today.toDateString()}`;
     }
-}
 
+    const forecastContainer = document.querySelector('.forecast-info ul');
+    if (forecastContainer) {
+        forecastContainer.innerHTML = '';
+
+        for (let i = 1; i <= 3; i++) {
+            const forecast = data.list[i * 8];
+            const forecastDay = new Date(forecast.dt * 1000);
+            const dayName = forecastDay.toLocaleDateString('en-US', { weekday: 'long' });
+
+            const forecastItem = `
+                <li>${dayName}: ${Math.round(forecast.main.temp)}°C, ${capitalizeWords(forecast.weather[0].description)}</li>
+            `;
+            forecastContainer.innerHTML += forecastItem;
+        }
+    }
+}
 function capitalizeWords(str) {
     return str.replace(/\b\w/g, char => char.toUpperCase());
 }
