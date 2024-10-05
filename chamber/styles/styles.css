@@ -5,6 +5,8 @@
     --text-color: #161f28;
     --link-color: #030054;
     --link-hover-color: #000000;
+    --card-bg-color: #f4feff;
+    --card-border-color: #d1d1d1;
 }
 
 body {
@@ -20,7 +22,6 @@ header {
     background-color: var(--bg-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 footer {
     background-color: var(--primary-color);
@@ -40,6 +41,22 @@ footer p {
     padding: 0;
     display: flex;
     gap: 20px;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.main-nav ul.open {
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 2;
 }
 
 .main-nav ul li a {
@@ -59,8 +76,32 @@ footer p {
 
 .menu-toggle {
     display: none;
-    font-size: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
     cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: 0.3s ease;
+}
+
+.nav-open .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-open .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .logo-container {
@@ -90,14 +131,14 @@ footer p {
 }
 
 .business-card {
-    background-color: white;
+    background-color: var(--card-bg-color);
     color: var(--text-color);
     border: 1px solid var(--primary-color);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .business-card h2 {
     color: var(--secondary-color);
@@ -120,7 +161,6 @@ footer p {
     margin: 0 auto;
 }
 
-
 .business-grid.list {
     display: block;
 }
@@ -142,7 +182,6 @@ footer p {
 .business-grid.list .business-card a {
     text-align: left;
 }
-
 
 .list-view-item {
     margin-bottom: 20px;
@@ -178,34 +217,142 @@ footer p {
     background-color: var(--link-hover-color);
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1001;
+.hero {
+    position: relative;
+    z-index: 1;
 }
 
-.menu-toggle span {
-    display: block;
+.hero-image {
     width: 100%;
-    height: 3px;
-    background-color: var(--secondary-color);
-    transition: 0.3s ease;
+    height: auto;
 }
 
-.nav-open .menu-toggle span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
 }
 
-.nav-open .menu-toggle span:nth-child(2) {
-    opacity: 0;
+.cta-button {
+    display: inline-block;
+    margin-top: 0px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.nav-open .menu-toggle span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.card h3 {
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.forecast-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.forecast-info ul li {
+    margin-bottom: 15px;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-details {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.spotlight-companies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.business-card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.business-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.business-card h2 {
+    color: var(--primary-color);
+}
+
+.business-card p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.forecast-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.forecast-info ul li {
+    margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
@@ -237,6 +384,10 @@ footer p {
 
     .site-name {
         margin-top: 10px;
+    }
+
+    .cards-section {
+        flex-direction: column;
     }
 }
 

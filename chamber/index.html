@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Ocoyucan Chamber of Commerce. Learn about local businesses and join the community.">
+    <meta name="author" content="Enoch Balbuena">
+    <title>Ocoyucan Chamber of Commerce - Home</title>
+
+    <link rel="icon" href="images/chamber-favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Ocoyucan Chamber of Commerce - Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enochbalbuena.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://enochbalbuena.github.io/wdd231/chamber/images/chamber-logo.png">
+    <meta property="og:description" content="Join the Ocoyucan Chamber of Commerce and discover local businesses and events."> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/chamber-logo.webp" loading="lazy" alt="Ocoyucan Chamber of Commerce Logo" class="logo" width="50" height="50">
+            <h1 class="site-name">Ocoyucan Chamber of Commerce</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/hero-image.webp" srcset="images/hero-image-small.webp 600w, images/hero-image-medium.webp 1200w, images/hero-image-large.webp 1800w" alt="Welcome to the Ocoyucan Chamber of Commerce" class="hero-image">
+            <div class="hero-text">
+                <h2>Fostering growth in the community.</h2>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="events-card card">
+                <h2>Current Events</h2>
+                <div class="events-list">
+                    <article class="event">
+                        <h3>Business Expo 2024</h3>
+                        <p>Join us for the largest business expo in the region.</p>
+                        <p><strong>Date:</strong> April 15, 2024</p>
+                    </article>
+                    <article class="event">
+                        <h3>Networking Luncheon</h3>
+                        <p>Connect with fellow business owners in an informal setting.</p>
+                        <p><strong>Date:</strong> March 20, 2024</p>
+                    </article>
+                </div>
+            </div>
+            <div class="weather-card card">
+                <h2>Current Weather</h2>
+                <div class="weather-info">
+                    <img id="weather-icon" class="weather-icon" src="" alt="Weather Icon">
+                    <div class="weather-details">
+                        <p><strong>Today:</strong> <span id="current-day"></span></p>
+                        <p>Temperature: <span id="temp"></span>&deg;C</p>
+                        <p>Description: <span id="description"></span></p>
+                        <p>High: <span id="high"></span>&deg;C</p>
+                        <p>Low: <span id="low"></span>&deg;C</p>
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                        <p>Sunrise: <span id="sunrise"></span></p>
+                        <p>Sunset: <span id="sunset"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-card card">
+                <h2>Weather Forecast</h2>
+                <div class="forecast-info">
+                    <h3>3-day forecast:</h3>
+                    <ul>
+                        <li>Today: <span id="forecast-day1"></span></li>
+                        <li>Tomorrow: <span id="forecast-day2"></span></li>
+                        <li>Day 3: <span id="forecast-day3"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="spotlight">
+            <h2>Featured businesses</h2>
+            <div class="spotlight-companies">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Ocoyucan Chamber of Commerce</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>
