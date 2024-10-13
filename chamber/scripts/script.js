@@ -6,7 +6,6 @@ async function loadMembers() {
         members = await response.json();
 
         displayMembers(members, 'grid');
-        
         displaySpotlightMembers(members);
     } catch (error) {
         console.error('Error fetching member data:', error);
@@ -43,19 +42,12 @@ function displayMembers(members, viewType) {
     }
 }
 
-function getMembershipLevel(level) {
-    if (level === 1) return 'Member';
-    if (level === 2) return 'Silver Member';
-    return 'Gold Member';
-}
-
 function displaySpotlightMembers(members) {
     const spotlightContainer = document.querySelector('.spotlight-companies');
     if (spotlightContainer) {
         spotlightContainer.innerHTML = '';
 
         const eligibleMembers = members.filter(member => member.membershipLevel === 2 || member.membershipLevel === 3);
-        
         const selectedMembers = getRandomMembers(eligibleMembers, 2 + Math.floor(Math.random() * 2));
 
         selectedMembers.forEach(member => {
@@ -148,7 +140,20 @@ function capitalizeWords(str) {
     return str.replace(/\b\w/g, char => char.toUpperCase());
 }
 
+function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    for (const [key, value] of urlParams.entries()) {
+        params[key] = value;
+    }
+
+    return params;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
     if (document.querySelector('.business-grid')) {
         loadMembers();
     }
@@ -159,14 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const year = new Date().getFullYear();
     const currentYearElement = document.getElementById('currentYear');
+    const lastModifiedElement = document.getElementById('lastModified');
+
     if (currentYearElement) {
         currentYearElement.textContent = year;
     }
 
-    const lastModifiedElement = document.getElementById('lastModified');
     if (lastModifiedElement) {
-        const lastModified = document.lastModified;
-        lastModifiedElement.textContent = `Last Modified: ${lastModified}`;
+        lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
     }
 
     const menuToggle = document.querySelector('.menu-toggle');
@@ -207,16 +212,37 @@ document.addEventListener('DOMContentLoaded', () => {
         timestampField.value = new Date().toISOString();
     }
 
+    const params = getQueryParams();
+    if (window.location.pathname.includes('thankyou.html')) {
+        const message = `
+            Thank you, <strong>${params['first-name']} ${params['last-name']}</strong>!<br>
+            We have received your application with the following details:
+            <ul>
+                <li>Email: ${params['email']}</li>
+                <li>Phone: ${params['phone']}</li>
+                <li>Business/Organization Name: ${params['organization']}</li>
+                <li>Submission Date: ${params['timestamp']}</li>
+            </ul>
+        `;
+        document.getElementById('thank-you-message').innerHTML = message;
+    }
+
     document.querySelectorAll('.membership-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            const modalId = card.querySelector('a').getAttribute('href'); // Get the modal ID
-            const modal = document.querySelector(modalId);
+        card.addEventListener('click', (event) => {
+            const modalId = card.id.replace('-card', '-modal');
+            const modal = document.getElementById(modalId);
+
             if (modal) {
                 modal.style.display = 'block';
             }
+
+            card.classList.add('card-clicked');
+            setTimeout(() => {
+                card.classList.remove('card-clicked');
+            }, 500);
         });
     });
-    
+
     document.querySelectorAll('.close-modal').forEach(button => {
         button.addEventListener('click', () => {
             button.parentElement.parentElement.style.display = 'none';

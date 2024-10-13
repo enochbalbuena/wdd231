@@ -8,14 +8,14 @@
     <meta name="author" content="Enoch Balbuena">
     <meta property="og:title" content="Ocoyucan Chamber of Commerce - Home">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://enochbalbuena.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:url" content="https://enochbalbuena.github.io/wdd231/chamber/index.html">
     <meta property="og:image" content="https://enochbalbuena.github.io/wdd231/chamber/images/chamber-logo.png">
     <meta property="og:description" content="Join the Ocoyucan Chamber of Commerce and discover local businesses and events."> 
     <title>Thank You for Joining!</title>
     
+    <link rel="icon" href="images/chamber-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -45,6 +45,41 @@
         <p>&copy; <span id="currentYear"></span> Ocoyucan Chamber of Commerce</p>
         <p id="lastModified"></p>
     </footer>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            for (const [key, value] of urlParams.entries()) {
+                params[key] = value;
+            }
+
+            return params;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = getQueryParams();
+
+            const message = `
+                Thank you, <strong>${params['first-name']} ${params['last-name']}</strong>!<br>
+                We have received your application with the following details:
+                <ul>
+                    <li>Email: ${params['email']}</li>
+                    <li>Phone: ${params['phone']}</li>
+                    <li>Business/Organization Name: ${params['organization']}</li>
+                    <li>Submission Date: ${params['timestamp']}</li>
+                </ul>
+            `;
+
+            document.getElementById('thank-you-message').innerHTML = message;
+
+            const year = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = year;
+            document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+        });
+    </script>
 </body>
 
 </html>

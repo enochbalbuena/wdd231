@@ -371,7 +371,7 @@ footer p {
     text-align: center;
     flex: 1 1 200px;
     height: 400px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -387,16 +387,6 @@ footer p {
     text-decoration: none;
     font-weight: bold;
     color: var(--link-color);
-}
-
-.membership-card:hover {
-    transform: scale(1.05);
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.membership-card:hover a {
-    color: white;
 }
 
 .join-form-section {
@@ -525,6 +515,68 @@ input[type="submit"]:hover {
 
 .close-modal:hover {
     background-color: var(--link-hover-color);
+}
+
+.thank-you-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.thank-you-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#thank-you-message {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+#thank-you-message strong {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+#thank-you-message ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#thank-you-message ul li {
+    margin-bottom: 10px;
+}
+
+#thank-you-message ul li::before {
+    content: '✔';
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+@keyframes card-click-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-clicked {
+    animation: card-click-animation 0.5s ease-out;
 }
 
 @media (max-width: 768px) {
