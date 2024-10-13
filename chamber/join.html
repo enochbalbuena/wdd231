@@ -111,12 +111,13 @@
                 <input type="text" id="organization" name="organization" title="Organization" autocomplete="organization" required>
             
                 <label for="membership">Membership Level:</label>
-                <select id="membership" name="membership" required>
-                    <option value="np">NP Membership (Non-Profit)</option>
-                    <option value="bronze">Bronze Membership</option>
-                    <option value="silver">Silver Membership</option>
-                    <option value="gold">Gold Membership</option>
-                </select>
+                    <select id="membership" name="membership" required>
+                        <option value="" disabled selected>Select a membership level</option>
+                        <option value="np">NP Membership (Non-Profit)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
             
                 <label for="description">Business Description:</label>
                 <textarea id="description" name="description" title="Business Description"></textarea>
