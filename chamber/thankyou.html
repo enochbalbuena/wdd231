@@ -46,40 +46,6 @@
         <p id="lastModified"></p>
     </footer>
 
-    <script>
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-
-            for (const [key, value] of urlParams.entries()) {
-                params[key] = value;
-            }
-
-            return params;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = getQueryParams();
-
-            const message = `
-                Thank you, <strong>${params['first-name']} ${params['last-name']}</strong>!<br>
-                We have received your application with the following details:
-                <ul>
-                    <li>Email: ${params['email']}</li>
-                    <li>Phone: ${params['phone']}</li>
-                    <li>Business/Organization Name: ${params['organization']}</li>
-                    <li>Submission Date: ${params['timestamp']}</li>
-                </ul>
-            `;
-
-            document.getElementById('thank-you-message').innerHTML = message;
-
-            const year = new Date().getFullYear();
-            document.getElementById('currentYear').textContent = year;
-            document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
-        });
-    </script>
 </body>
 
 </html>
