@@ -143,6 +143,7 @@ function displayWeather(data) {
         }
     }
 }
+
 function capitalizeWords(str) {
     return str.replace(/\b\w/g, char => char.toUpperCase());
 }
@@ -200,4 +201,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+
+    document.querySelectorAll('.membership-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const modalId = card.querySelector('a').getAttribute('href'); // Get the modal ID
+            const modal = document.querySelector(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        });
+    });
+    
+    document.querySelectorAll('.close-modal').forEach(button => {
+        button.addEventListener('click', () => {
+            button.parentElement.parentElement.style.display = 'none';
+        });
+    });
 });

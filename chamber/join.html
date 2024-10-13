@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Ocoyucan Chamber of Commerce.">
+    <meta name="author" content="Enoch Balbuena">
+    <title>Join the Ocoyucan Chamber of Commerce</title>
+
+    <link rel="icon" href="images/chamber-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/chamber-logo.webp" loading="lazy" alt="Ocoyucan Chamber of Commerce Logo" class="logo" width="50" height="50">
+            <h1 class="site-name">Ocoyucan Chamber of Commerce</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="membership-info">
+            <div class="membership-card" id="np-card">
+                <h3>NP Membership</h3>
+                <a href="#np-modal" class="membership-link">More Info</a>
+            </div>
+            <div class="membership-card" id="bronze-card">
+                <h3>Bronze Membership</h3>
+                <a href="#bronze-modal" class="membership-link">More Info</a>
+            </div>
+            <div class="membership-card" id="silver-card">
+                <h3>Silver Membership</h3>
+                <a href="#silver-modal" class="membership-link">More Info</a>
+            </div>
+            <div class="membership-card" id="gold-card">
+                <h3>Gold Membership</h3>
+                <a href="#gold-modal" class="membership-link">More Info</a>
+            </div>
+        </section>
+
+        <div id="np-modal" class="modal">
+            <div class="modal-content">
+                <h4>NP Membership Benefits</h4>
+                <p>Special events, no fees, etc.</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+                <h4>Bronze Membership Benefits</h4>
+                <p>Event discounts, basic advertising, etc.</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+                <h4>Silver Membership Benefits</h4>
+                <p>Additional benefits, spotlight ads, etc.</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+                <h4>Gold Membership Benefits</h4>
+                <p>All benefits, top advertising, VIP access, etc.</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+        <section class="join-form-section">
+            <h2>Join the Chamber</h2>
+            <form action="thankyou.html" method="get">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
+
+                <label for="org-title">Organizational Title:</label>
+                <input type="text" id="org-title" name="org-title" title="Organization Title" autocomplete="organization-title"
+                       pattern="[A-Za-z\- ]{7,}" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" title="Email" autocomplete="email" placeholder="example@example.com" required>
+
+                <label for="phone">Mobile Phone:</label>
+                <input type="tel" id="phone" name="phone" title="Mobile Phone" autocomplete="tel-national" required>
+
+                <label for="organization">Business/Organization Name:</label>
+                <input type="text" id="organization" name="organization" title="Organization" autocomplete="organization" required>
+
+                <label for="membership">Membership Level:</label>
+                <select id="membership" name="membership" required>
+                    <option value="np">NP Membership (Non-Profit)</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+
+                <label for="description">Business Description:</label>
+                <textarea id="description" name="description" title="Business Description"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Join Now">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Ocoyucan Chamber of Commerce</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>
+
