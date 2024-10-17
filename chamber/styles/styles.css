@@ -70,10 +70,6 @@ footer p {
     color: var(--link-hover-color);
 }
 
-.main-nav ul li a:hover {
-    color: #007BFF;
-}
-
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -648,5 +644,73 @@ input[type="submit"]:hover {
 
     nav ul li:last-child {
         margin-right: 0;
+    }
+}
+
+.discover-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.sidebar h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.image-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .image-gallery img:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .discover-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
     }
 }
