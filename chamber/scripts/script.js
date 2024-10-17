@@ -248,4 +248,26 @@ document.addEventListener('DOMContentLoaded', () => {
             button.parentElement.parentElement.style.display = 'none';
         });
     });
+
+    const visitMessageElement = document.getElementById('visit-message');
+    const currentDate = new Date();
+
+    const lastVisit = localStorage.getItem('lastVisit');
+    if (lastVisit) {
+        const lastVisitDate = new Date(parseInt(lastVisit, 10));
+        const timeDifference = currentDate - lastVisitDate;
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        if (daysDifference < 1) {
+            visitMessageElement.textContent = "Back so soon! Awesome!";
+        } else if (daysDifference === 1) {
+            visitMessageElement.textContent = "You last visited 1 day ago.";
+        } else {
+            visitMessageElement.textContent = `You last visited ${daysDifference} days ago.`;
+        }
+    } else {
+        visitMessageElement.textContent = "Welcome! Let us know if you have any questions.";
+    }
+
+    localStorage.setItem('lastVisit', currentDate.getTime());
 });
