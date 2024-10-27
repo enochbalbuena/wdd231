@@ -1,48 +1,48 @@
 [
     {
-        "id": 5,
+        "id": 1,
         "name": "Machine Learning",
         "description": "Leverage the power of predictive algorithms.",
         "details": "Machine learning can optimize and automate various business processes.",
         "imageSlug": "machine-learning"
     },
     {
-        "id": 6,
+        "id": 2,
         "name": "Data Analysis",
         "description": "Gain insights from your data.",
         "details": "Data analysis helps identify trends, patterns, and insights, enabling better decision-making.",
         "imageSlug": "data-analysis"
     },
     {
-        "id": 7,
+        "id": 3,
         "name": "Forecasting",
         "description": "Predict future trends and outcomes.",
         "details": "Our forecasting models help businesses anticipate market changes, resource needs, and customer behaviors.",
         "imageSlug": "forecasting"
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "Natural Language Processing",
         "description": "Enhance communication between machines and humans.",
         "details": "NLP solutions improve customer interactions, enable chatbots, and assist in automating text-based tasks.",
         "imageSlug": "nlp"
     },
     {
-        "id": 2,
+        "id": 5,
         "name": "Robotic Process Automation (RPA)",
         "description": "Automate repetitive tasks.",
         "details": "RPA solutions enable businesses to automate mundane, repetitive tasks, improving efficiency and reducing costs.",
         "imageSlug": "rpa"
     },
     {
-        "id": 3,
+        "id": 6,
         "name": "AI-Powered Chatbots",
         "description": "Provide 24/7 customer service.",
         "details": "AI chatbots can answer queries, assist customers, and provide support around the clock without human intervention.",
         "imageSlug": "chatbots"
     },
     {
-        "id": 4,
+        "id": 7,
         "name": "Supply Chain Optimization",
         "description": "Streamline your supply chain operations.",
         "details": "AI-driven solutions optimize logistics, inventory management, and supplier coordination, reducing costs and delays.",
