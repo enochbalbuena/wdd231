@@ -3,37 +3,608 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
-    color: #333333;
+    color: #111111;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-h1, h2 {
+main {
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+header {
+    height: 80px;
+    overflow: hidden;
+}
+
+a {
+    color: #0056b3;
+}
+
+a:hover {
+    color: #003366;
+}
+
+h1, h2, h3 {
     color: #333333;
+    margin-bottom: 0.5rem;
 }
 
 h1 {
     font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 h2 {
     font-size: 2rem;
+    text-align: center;
     margin-top: 1.5rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
 p {
-    font-size: 1.1rem;
+    color: #222222;
     line-height: 1.6;
-    color: #333333;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .section {
-    margin-bottom: 2rem;
+    padding: 2rem;
 }
 
-.wireframe {
+.navbar {
+    background-color: #333333;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    background-color: #333;
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .nav-links .btn-primary {
+    background-color: #555555;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links.show {
+    display: flex;
+    z-index: 1000;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333333;
+    width: 200px;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.page-banner {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+
+.hero-carousel {
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.carousel-text-box {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    max-width: 800px;
+}
+
+.carousel-text-box h3,
+.carousel-text-box p {
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.all-services-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.all-services-btn:hover {
+    background-color: #555;
+}
+
+.services-page .service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    justify-items: center;
+    min-height: 500px;
+}
+
+.service {
+    background-color: #f9f9f9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: 400px;
+    min-height: 400px;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.service h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.service .btn-secondary {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.service .btn-secondary:hover {
+    background-color: #555;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+}
+
+.pricing-plan {
+    background-color: #f5f5f5;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    min-height: 400px;
+}
+
+.pricing-plan:hover {
+    transform: scale(1.05);
+}
+
+.pricing-plan h3 {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-plan ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 2rem;
+}
+
+form input, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 0.75rem;
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #555555;
+}
+
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+footer a {
+    color: #FFFFFF;
+}
+
+footer p {
+    color: #FFFFFF;
+}
+
+.footer-links, .social-media {
+    flex: 1;
+    margin: 1rem;
+}
+
+.footer-links h3 {
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li a {
+    padding: 0.5rem 0;
+    display: inline-block;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.ai-news {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.ai-news h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 1.5rem;
+}
+
+.news-item {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.news-item h3 {
+    font-size: 1.2rem;
+    color: #0056b3;
+    margin-bottom: 1rem;
+}
+
+.news-item p {
+    color: #555555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-item a {
+    color: #ffffff;
+    background-color: #333333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.news-item a:hover {
+    background-color: #555555;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.ai-news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333333;
+        width: 200px;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .service-list, .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services-page .service-items {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .services-page .service-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .services-page .service-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 479px) {
+    .services-page .service-items {
+        grid-template-columns: 1fr;
+    }
 }
 
 .wireframe img {

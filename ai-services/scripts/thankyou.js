@@ -1,0 +1,1 @@
+const e=JSON.parse(localStorage.getItem("formData"));e&&(document.getElementById("submittedName").textContent=`Name: ${e.name}`,document.getElementById("submittedEmail").textContent=`Email: ${e.email}`,document.getElementById("submittedMessage").textContent=`Message: ${e.message}`),localStorage.removeItem("formData");

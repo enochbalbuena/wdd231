@@ -1,0 +1,107 @@
+[
+    {
+        "id": 5,
+        "name": "Machine Learning",
+        "description": "Leverage the power of predictive algorithms.",
+        "details": "Machine learning can optimize and automate various business processes.",
+        "imageSlug": "machine-learning"
+    },
+    {
+        "id": 6,
+        "name": "Data Analysis",
+        "description": "Gain insights from your data.",
+        "details": "Data analysis helps identify trends, patterns, and insights, enabling better decision-making.",
+        "imageSlug": "data-analysis"
+    },
+    {
+        "id": 7,
+        "name": "Forecasting",
+        "description": "Predict future trends and outcomes.",
+        "details": "Our forecasting models help businesses anticipate market changes, resource needs, and customer behaviors.",
+        "imageSlug": "forecasting"
+    },
+    {
+        "id": 1,
+        "name": "Natural Language Processing",
+        "description": "Enhance communication between machines and humans.",
+        "details": "NLP solutions improve customer interactions, enable chatbots, and assist in automating text-based tasks.",
+        "imageSlug": "nlp"
+    },
+    {
+        "id": 2,
+        "name": "Robotic Process Automation (RPA)",
+        "description": "Automate repetitive tasks.",
+        "details": "RPA solutions enable businesses to automate mundane, repetitive tasks, improving efficiency and reducing costs.",
+        "imageSlug": "rpa"
+    },
+    {
+        "id": 3,
+        "name": "AI-Powered Chatbots",
+        "description": "Provide 24/7 customer service.",
+        "details": "AI chatbots can answer queries, assist customers, and provide support around the clock without human intervention.",
+        "imageSlug": "chatbots"
+    },
+    {
+        "id": 4,
+        "name": "Supply Chain Optimization",
+        "description": "Streamline your supply chain operations.",
+        "details": "AI-driven solutions optimize logistics, inventory management, and supplier coordination, reducing costs and delays.",
+        "imageSlug": "supply-chain"
+    },
+    {
+        "id": 8,
+        "name": "Risk Analysis",
+        "description": "Evaluate and mitigate business risks.",
+        "details": "Risk analysis solutions enable you to identify potential risks and prepare mitigation strategies.",
+        "imageSlug": "risk-analysis"
+    },
+    {
+        "id": 9,
+        "name": "Sentiment Analysis",
+        "description": "Understand customer sentiments.",
+        "details": "Sentiment analysis helps companies gauge public opinion on their brand, products, or services through natural language processing.",
+        "imageSlug": "sentiment-analysis"
+    },
+    {
+        "id": 10,
+        "name": "Generative Models",
+        "description": "Create innovative designs and solutions.",
+        "details": "Generative models are used for creating new designs, artworks, and product prototypes, pushing the limits of creativity.",
+        "imageSlug": "generative-models"
+    },
+    {
+        "id": 11,
+        "name": "Computer Vision",
+        "description": "Automate image and video processing.",
+        "details": "Computer vision enables machines to interpret and understand visual data, enhancing applications like facial recognition and object detection.",
+        "imageSlug": "computer-vision"
+    },
+    {
+        "id": 12,
+        "name": "Data Mining",
+        "description": "Extract valuable information from raw data.",
+        "details": "Data mining tools help uncover hidden patterns, relationships, and trends within large datasets.",
+        "imageSlug": "data-mining"
+    },
+    {
+        "id": 13,
+        "name": "Recommendation Systems",
+        "description": "Personalize user experiences.",
+        "details": "Recommendation engines analyze user behavior to suggest relevant products, content, or services, increasing engagement.",
+        "imageSlug": "recommendation-systems"
+    },
+    {
+        "id": 14,
+        "name": "Fraud Detection",
+        "description": "Identify and prevent fraudulent activities.",
+        "details": "AI models can detect unusual patterns in transactions, helping businesses prevent fraud and secure data.",
+        "imageSlug": "fraud-detection"
+    },
+    {
+        "id": 15,
+        "name": "Speech Recognition",
+        "description": "Convert speech to text with ease.",
+        "details": "Our speech recognition systems enable seamless voice-to-text applications, from transcription to voice commands.",
+        "imageSlug": "speech-recognition"
+    }
+]

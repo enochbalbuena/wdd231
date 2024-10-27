@@ -1,0 +1,1 @@
+import{loadServices as e}from"./services.js";document.addEventListener("DOMContentLoaded",(()=>{e()}));

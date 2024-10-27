@@ -1,0 +1,1 @@
+export function setUserPreferences(){document.querySelectorAll(".service button").forEach((e=>{e.addEventListener("click",(()=>{const t=e.parentElement.querySelector("h3").textContent;localStorage.setItem("lastVisitedService",t)}))}));const e=localStorage.getItem("lastVisitedService");e&&console.log(`You last viewed: ${e}`)}
